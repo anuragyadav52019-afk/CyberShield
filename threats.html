@@ -1,0 +1,461 @@
+<CodeBlock language="html" editable> <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Cyber Threats | CyberShield</title> <link rel="stylesheet" href="style.css">
+<style>
+    .threat-hero {
+        padding: 65px 8%;
+        text-align: center;
+        background: radial-gradient(ellipse at top, #153b5e, #080d18 70%);
+    }
+
+    .threat-hero h1 {
+        font-size: clamp(35px, 5vw, 55px);
+        margin: 15px 0;
+    }
+
+    .threat-hero h1 span {
+        color: #38bdf8;
+    }
+
+    .threat-hero p {
+        color: #aab8ca;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .threat-section {
+        padding: 55px 8%;
+    }
+
+    .threat-section h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .section-intro {
+        color: #aab8ca;
+        margin-bottom: 30px;
+    }
+
+    .threat-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .threat-card {
+        background: linear-gradient(145deg, #142238, #0e192a);
+        border: 1px solid #263b55;
+        border-radius: 14px;
+        padding: 24px;
+        transition: 0.3s;
+    }
+
+    .threat-card:hover {
+        transform: translateY(-6px);
+        border-color: #38bdf8;
+    }
+
+    .threat-icon {
+        font-size: 35px;
+        margin-bottom: 12px;
+    }
+
+    .threat-card h3 {
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+
+    .threat-card > p {
+        color: #aab8ca;
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    .risk-label {
+        display: inline-block;
+        background: #40212a;
+        color: #fca5a5;
+        border-radius: 5px;
+        padding: 4px 9px;
+        font-size: 11px;
+        margin-bottom: 15px;
+    }
+
+    .threat-card details {
+        border-top: 1px solid #2b3b50;
+        padding-top: 14px;
+    }
+
+    .threat-card summary {
+        color: #38bdf8;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: bold;
+        padding: 5px 0;
+    }
+
+    .threat-card details p {
+        color: #d0dbea;
+        font-size: 13px;
+        margin-top: 12px;
+    }
+
+    .example-box {
+        margin-top: 12px;
+        padding: 12px;
+        border-left: 3px solid #38bdf8;
+        background: #0b1728;
+        border-radius: 4px;
+    }
+
+    .protection-section {
+        margin: 0 8% 60px;
+        padding: 30px;
+        background: #10253a;
+        border: 1px solid #294b69;
+        border-radius: 14px;
+    }
+
+    .protection-section h2 {
+        margin-bottom: 20px;
+    }
+
+    .protection-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .protection-item {
+        padding: 14px;
+        background: #142c43;
+        border-radius: 8px;
+        color: #dbeafe;
+    }
+
+    .protection-item span {
+        color: #4ade80;
+        margin-right: 8px;
+    }
+
+    .threat-cta {
+        text-align: center;
+        padding: 45px 20px 65px;
+    }
+
+    .threat-cta p {
+        color: #aab8ca;
+        margin: 12px 0 24px;
+    }
+
+    @media (max-width: 850px) {
+        .threat-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 550px) {
+        .threat-grid,
+        .protection-list {
+            grid-template-columns: 1fr;
+        }
+
+        .threat-section {
+            padding: 40px 6%;
+        }
+
+        .protection-section {
+            margin: 0 6% 40px;
+            padding: 22px;
+        }
+    }
+</style>
+</head> <body>
+<!-- NAVIGATION -->
+<header class="navbar">
+    <a href="index.html" class="logo">🛡️ Cyber<span>Shield</span></a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="threats.html" class="active">Cyber Threats</a>
+        <a href="tips.html">Safety Tips</a>
+        <a href="quiz.html">Safety Quiz</a>
+        <a href="wellness.html">Digital Wellness</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="threat-hero">
+    <p class="tagline">KNOW THE RISK • STAY PROTECTED</p>
+
+    <h1>Explore Cyber <span>Threats</span></h1>
+
+    <p>
+        The internet offers incredible opportunities, but it also comes
+        with risks. Learn to recognise common cyber threats and understand
+        how to protect yourself.
+    </p>
+</section>
+
+<!-- THREAT CARDS -->
+<section class="threat-section">
+
+    <h2>Common Online Threats</h2>
+
+    <p class="section-intro">
+        Explore each card and select "Learn how it works" for more details.
+    </p>
+
+    <div class="threat-grid">
+
+        <!-- PHISHING -->
+        <article class="threat-card">
+            <div class="threat-icon">🎣</div>
+            <span class="risk-label">ONLINE FRAUD</span>
+            <h3>Phishing</h3>
+
+            <p>
+                Fake emails, messages or websites designed to trick people
+                into revealing confidential information.
+            </p>
+
+            <details>
+                <summary>Learn how it works +</summary>
+                <p>
+                    A scammer may pretend to represent a bank or a familiar
+                    company and ask you to click a suspicious link.
+                </p>
+
+                <div class="example-box">
+                    <strong>Warning sign:</strong><br>
+                    "Your account will be blocked! Verify your details now."
+                </div>
+
+                <p>
+                    <strong>Protection:</strong> Verify the sender and use
+                    the organisation's official website or app.
+                </p>
+            </details>
+        </article>
+
+        <!-- MALWARE -->
+        <article class="threat-card">
+            <div class="threat-icon">🦠</div>
+            <span class="risk-label">MALICIOUS SOFTWARE</span>
+            <h3>Malware</h3>
+
+            <p>
+                Harmful software that may damage devices, disrupt activities
+                or steal information.
+            </p>
+
+            <details>
+                <summary>Learn how it works +</summary>
+                <p>
+                    Malware may arrive through unsafe downloads, infected
+                    attachments or untrusted applications.
+                </p>
+
+                <div class="example-box">
+                    <strong>Warning sign:</strong><br>
+                    An unknown website asks you to install an unfamiliar app.
+                </div>
+
+                <p>
+                    <strong>Protection:</strong> Download software from
+                    trusted sources and keep your device updated.
+                </p>
+            </details>
+        </article>
+
+        <!-- PASSWORD THEFT -->
+        <article class="threat-card">
+            <div class="threat-icon">🔑</div>
+            <span class="risk-label">ACCOUNT SECURITY</span>
+            <h3>Password Theft</h3>
+
+            <p>
+                When someone obtains another person's password and attempts
+                to access their account without permission.
+            </p>
+
+            <details>
+                <summary>Learn how it works +</summary>
+                <p>
+                    Reusing passwords across websites can increase risk if
+                    one of those services experiences a data breach.
+                </p>
+
+                <div class="example-box">
+                    <strong>Warning sign:</strong><br>
+                    You receive an unexpected login alert from an unfamiliar device.
+                </div>
+
+                <p>
+                    <strong>Protection:</strong> Use unique passwords and
+                    enable two-factor authentication.
+                </p>
+            </details>
+        </article>
+
+        <!-- CYBERBULLYING -->
+        <article class="threat-card">
+            <div class="threat-icon">💬</div>
+            <span class="risk-label">ONLINE HARASSMENT</span>
+            <h3>Cyberbullying</h3>
+
+            <p>
+                Using digital platforms to repeatedly harass, threaten,
+                embarrass or target another person.
+            </p>
+
+            <details>
+                <summary>Learn how it works +</summary>
+                <p>
+                    It may include hurtful messages, abusive comments or
+                    sharing someone's private information without permission.
+                </p>
+
+                <div class="example-box">
+                    <strong>Warning sign:</strong><br>
+                    Someone repeatedly sends threatening or humiliating messages.
+                </div>
+
+                <p>
+                    <strong>Protection:</strong> Save relevant evidence,
+                    block and report the account, and seek help from a
+                    trusted adult.
+                </p>
+            </details>
+        </article>
+
+        <!-- SPAM -->
+        <article class="threat-card">
+            <div class="threat-icon">📨</div>
+            <span class="risk-label">UNWANTED MESSAGES</span>
+            <h3>Spam</h3>
+
+            <p>
+                Unwanted messages sent in large numbers, sometimes containing
+                misleading offers or suspicious links.
+            </p>
+
+            <details>
+                <summary>Learn how it works +</summary>
+                <p>
+                    Spam messages may advertise fake offers or try to direct
+                    people to untrustworthy websites.
+                </p>
+
+                <div class="example-box">
+                    <strong>Warning sign:</strong><br>
+                    An unknown sender promises an unbelievable prize.
+                </div>
+
+                <p>
+                    <strong>Protection:</strong> Avoid suspicious links,
+                    block unwanted senders and report spam.
+                </p>
+            </details>
+        </article>
+
+        <!-- IDENTITY THEFT -->
+        <article class="threat-card">
+            <div class="threat-icon">🪪</div>
+            <span class="risk-label">PRIVACY RISK</span>
+            <h3>Identity Theft</h3>
+
+            <p>
+                The unauthorised use of someone's personal information
+                to impersonate them or misuse their identity.
+            </p>
+
+            <details>
+                <summary>Learn how it works +</summary>
+                <p>
+                    Exposed personal details may be misused to impersonate
+                    someone or attempt to access their accounts.
+                </p>
+
+                <div class="example-box">
+                    <strong>Warning sign:</strong><br>
+                    An unfamiliar account is pretending to be you.
+                </div>
+
+                <p>
+                    <strong>Protection:</strong> Limit public personal
+                    information and report impersonation to the platform.
+                </p>
+            </details>
+        </article>
+
+    </div>
+</section>
+
+<!-- PROTECTION CHECKLIST -->
+<section class="protection-section">
+
+    <p class="tagline">YOUR FIRST LINE OF DEFENCE</p>
+    <h2>🛡️ Stay One Step Ahead</h2>
+
+    <div class="protection-list">
+        <div class="protection-item">
+            <span>✓</span> Use strong, unique passwords.
+        </div>
+
+        <div class="protection-item">
+            <span>✓</span> Never share your OTP or password.
+        </div>
+
+        <div class="protection-item">
+            <span>✓</span> Verify suspicious messages before responding.
+        </div>
+
+        <div class="protection-item">
+            <span>✓</span> Keep your apps and devices updated.
+        </div>
+
+        <div class="protection-item">
+            <span>✓</span> Review privacy settings on your accounts.
+        </div>
+
+        <div class="protection-item">
+            <span>✓</span> Block and report suspicious accounts.
+        </div>
+    </div>
+</section>
+
+<!-- NEXT STEP -->
+<section class="threat-cta">
+    <p class="tagline">KNOWLEDGE IS YOUR BEST DEFENCE</p>
+
+    <h2>Ready to Improve Your Cyber Safety?</h2>
+
+    <p>
+        Explore practical safety habits and learn how to make smarter
+        decisions in the digital world.
+    </p>
+
+    <a href="tips.html" class="btn primary-btn">
+        Discover Safety Tips →
+    </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <a href="index.html" class="logo">🛡️ Cyber<span>Shield</span></a>
+
+    <p>Digital Wellness & Cyber Safety Awareness Project</p>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="threats.html">Cyber Threats</a>
+        <a href="tips.html">Safety Tips</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <p class="copyright">
+        Class 10 Computer Applications Project | Learn • Protect • Empower
+    </p>
+</footer>
+</body> </html> </CodeBlock>

@@ -1,0 +1,558 @@
+<CodeBlock language="html" editable> <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Safety Tips | CyberShield</title> <link rel="stylesheet" href="style.css">
+<style>
+    /* PAGE HERO */
+    .tips-hero {
+        text-align: center;
+        padding: 65px 8%;
+        background: radial-gradient(ellipse at top, #153b5e, #080d18 72%);
+    }
+
+    .tips-hero h1 {
+        font-size: clamp(35px, 5vw, 55px);
+        margin: 12px 0;
+    }
+
+    .tips-hero h1 span {
+        color: #38bdf8;
+    }
+
+    .tips-hero p:not(.tagline) {
+        color: #aab8ca;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    /* SECTION */
+    .tips-section {
+        padding: 55px 8%;
+    }
+
+    .tips-section h2 {
+        font-size: 29px;
+        margin-bottom: 10px;
+    }
+
+    .tips-intro {
+        color: #aab8ca;
+        margin-bottom: 28px;
+    }
+
+    /* SAFETY CARDS */
+    .tips-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .tip-card {
+        padding: 24px;
+        background: linear-gradient(145deg, #142238, #0e192a);
+        border: 1px solid #263b55;
+        border-radius: 13px;
+        transition: 0.3s;
+    }
+
+    .tip-card:hover {
+        transform: translateY(-5px);
+        border-color: #38bdf8;
+    }
+
+    .tip-icon {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .tip-card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .tip-card > p {
+        color: #aab8ca;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .tip-card details {
+        border-top: 1px solid #2b3b50;
+        padding-top: 13px;
+    }
+
+    .tip-card summary {
+        color: #38bdf8;
+        font-size: 13px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 5px 0;
+    }
+
+    .tip-card details p {
+        color: #d0dbea;
+        font-size: 13px;
+        margin-top: 12px;
+    }
+
+    .tip-card details ul {
+        color: #d0dbea;
+        padding-left: 20px;
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    .tip-card details li {
+        margin-bottom: 7px;
+    }
+
+    /* INTERACTIVE CHECKLIST */
+    .checklist-section {
+        margin: 0 8% 60px;
+        padding: 32px;
+        background: #102238;
+        border: 1px solid #294967;
+        border-radius: 15px;
+    }
+
+    .checklist-section h2 {
+        margin-bottom: 8px;
+    }
+
+    .checklist-section > p {
+        color: #aab8ca;
+        margin-bottom: 22px;
+    }
+
+    .checklist {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .check-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 15px;
+        background: #142c43;
+        border: 1px solid #29445f;
+        border-radius: 9px;
+        cursor: pointer;
+        color: #dbeafe;
+        font-size: 14px;
+        transition: 0.2s;
+    }
+
+    .check-item:hover {
+        border-color: #38bdf8;
+    }
+
+    .check-item input {
+        width: 18px;
+        height: 18px;
+        margin-top: 3px;
+        flex-shrink: 0;
+        accent-color: #38bdf8;
+        cursor: pointer;
+    }
+
+    .check-item:has(input:checked) {
+        border-color: #4ade80;
+        background: #12332e;
+    }
+
+    .check-item:has(input:checked) span {
+        color: #86efac;
+    }
+
+    .check-note {
+        margin-top: 18px;
+        padding: 13px;
+        background: #0b1728;
+        border-radius: 8px;
+        color: #9eafc5;
+        font-size: 12px;
+    }
+
+    /* PRIVACY GUIDE */
+    .privacy-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        padding: 30px;
+        background: #0e192a;
+        border: 1px solid #263b55;
+        border-radius: 14px;
+    }
+
+    .privacy-box h3 {
+        margin-bottom: 12px;
+    }
+
+    .privacy-box ul {
+        padding-left: 20px;
+        color: #b7c4d8;
+        font-size: 14px;
+    }
+
+    .privacy-box li {
+        margin-bottom: 10px;
+    }
+
+    .privacy-box .good {
+        color: #86efac;
+    }
+
+    .privacy-box .bad {
+        color: #fca5a5;
+    }
+
+    /* BOTTOM BANNER */
+    .tips-banner {
+        text-align: center;
+        margin: 0 8% 65px;
+        padding: 35px 25px;
+        background: linear-gradient(110deg, #12304b, #112039);
+        border: 1px solid #284967;
+        border-radius: 14px;
+    }
+
+    .tips-banner h2 {
+        font-size: 27px;
+        margin-bottom: 10px;
+    }
+
+    .tips-banner p {
+        color: #aab8ca;
+        margin-bottom: 22px;
+    }
+
+    @media (max-width: 850px) {
+        .tips-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 600px) {
+        .tips-grid,
+        .checklist,
+        .privacy-box {
+            grid-template-columns: 1fr;
+        }
+
+        .tips-section {
+            padding: 40px 6%;
+        }
+
+        .checklist-section,
+        .tips-banner {
+            margin-left: 6%;
+            margin-right: 6%;
+            padding: 23px;
+        }
+    }
+</style>
+</head> <body>
+<!-- NAVIGATION -->
+<header class="navbar">
+    <a href="index.html" class="logo">🛡️ Cyber<span>Shield</span></a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="threats.html">Cyber Threats</a>
+        <a href="tips.html" class="active">Safety Tips</a>
+        <a href="quiz.html">Safety Quiz</a>
+        <a href="wellness.html">Digital Wellness</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="tips-hero">
+    <p class="tagline">SMALL HABITS • STRONGER PROTECTION</p>
+
+    <h1>Make Safety Your <span>Habit.</span></h1>
+
+    <p>
+        Protect your digital identity with simple, practical habits.
+        Explore the tips, check your safety habits and take control
+        of your online privacy.
+    </p>
+</section>
+
+<!-- SAFETY TIPS -->
+<section class="tips-section">
+
+    <h2>Essential Safety Practices</h2>
+
+    <p class="tips-intro">
+        Select "Read more" on any card to explore practical recommendations.
+    </p>
+
+    <div class="tips-grid">
+
+        <!-- PASSWORDS -->
+        <article class="tip-card">
+            <div class="tip-icon">🔐</div>
+            <h3>1. Secure Your Passwords</h3>
+
+            <p>
+                Strong, unique passwords help protect your online accounts.
+            </p>
+
+            <details>
+                <summary>Read more +</summary>
+                <ul>
+                    <li>Use long, unique passwords or passphrases.</li>
+                    <li>Avoid obvious personal details.</li>
+                    <li>Never reuse the same password everywhere.</li>
+                    <li>Consider a trusted password manager.</li>
+                </ul>
+            </details>
+        </article>
+
+        <!-- TWO FACTOR -->
+        <article class="tip-card">
+            <div class="tip-icon">🛡️</div>
+            <h3>2. Enable Two-Factor Authentication</h3>
+
+            <p>
+                Add another layer of protection to your important accounts.
+            </p>
+
+            <details>
+                <summary>Read more +</summary>
+                <p>
+                    Two-factor authentication requires an additional
+                    verification step besides your password.
+                </p>
+                <ul>
+                    <li>Enable it wherever available.</li>
+                    <li>Never share verification codes with others.</li>
+                    <li>Protect your account recovery methods.</li>
+                </ul>
+            </details>
+        </article>
+
+        <!-- PHISHING -->
+        <article class="tip-card">
+            <div class="tip-icon">🔎</div>
+            <h3>3. Identify Suspicious Links</h3>
+
+            <p>
+                Do not trust every message, link or offer you receive.
+            </p>
+
+            <details>
+                <summary>Read more +</summary>
+                <ul>
+                    <li>Check the sender carefully.</li>
+                    <li>Be cautious of urgent threats and prizes.</li>
+                    <li>Verify website addresses before signing in.</li>
+                    <li>Visit official websites directly when unsure.</li>
+                </ul>
+            </details>
+        </article>
+
+        <!-- PRIVACY -->
+        <article class="tip-card">
+            <div class="tip-icon">👤</div>
+            <h3>4. Protect Your Privacy</h3>
+
+            <p>
+                Control what you share and who can see your information.
+            </p>
+
+            <details>
+                <summary>Read more +</summary>
+                <ul>
+                    <li>Review your social media privacy settings.</li>
+                    <li>Avoid publishing your home address or daily routine.</li>
+                    <li>Think before posting photos and personal details.</li>
+                    <li>Never share passwords or OTPs.</li>
+                </ul>
+            </details>
+        </article>
+
+        <!-- SOFTWARE -->
+        <article class="tip-card">
+            <div class="tip-icon">💻</div>
+            <h3>5. Keep Devices Updated</h3>
+
+            <p>
+                Updates often include important security improvements.
+            </p>
+
+            <details>
+                <summary>Read more +</summary>
+                <ul>
+                    <li>Install updates from trusted sources.</li>
+                    <li>Remove applications you no longer need.</li>
+                    <li>Use built-in security protections.</li>
+                    <li>Back up important files regularly.</li>
+                </ul>
+            </details>
+        </article>
+
+        <!-- PUBLIC WI-FI -->
+        <article class="tip-card">
+            <div class="tip-icon">📶</div>
+            <h3>6. Browse Carefully on Public Wi-Fi</h3>
+
+            <p>
+                Public networks may not offer the same protection as
+                your trusted home network.
+            </p>
+
+            <details>
+                <summary>Read more +</summary>
+                <ul>
+                    <li>Confirm the correct network name with the venue.</li>
+                    <li>Use secure websites and apps.</li>
+                    <li>Avoid sensitive transactions on untrusted networks.</li>
+                    <li>Turn off automatic connection to unknown networks.</li>
+                </ul>
+            </details>
+        </article>
+
+    </div>
+</section>
+
+<!-- INTERACTIVE CHECKLIST -->
+<section class="checklist-section">
+
+    <p class="tagline">YOUR PERSONAL SAFETY REVIEW</p>
+
+    <h2>✅ My Cyber Safety Checklist</h2>
+
+    <p>
+        Tick the statements that are true for you. Use this checklist
+        to reflect on your habits.
+    </p>
+
+    <div class="checklist">
+
+        <label class="check-item">
+            <input type="checkbox">
+            <span>I use unique passwords for important accounts.</span>
+        </label>
+
+        <label class="check-item">
+            <input type="checkbox">
+            <span>I never share my OTP or password.</span>
+        </label>
+
+        <label class="check-item">
+            <input type="checkbox">
+            <span>I verify suspicious links before opening them.</span>
+        </label>
+
+        <label class="check-item">
+            <input type="checkbox">
+            <span>I review my account privacy settings.</span>
+        </label>
+
+        <label class="check-item">
+            <input type="checkbox">
+            <span>I install updates from trusted sources.</span>
+        </label>
+
+        <label class="check-item">
+            <input type="checkbox">
+            <span>I know how to block and report suspicious accounts.</span>
+        </label>
+
+        <label class="check-item">
+            <input type="checkbox">
+            <span>I think before sharing photos or personal details.</span>
+        </label>
+
+        <label class="check-item">
+            <input type="checkbox">
+            <span>I know how to ask a trusted adult for online safety help.</span>
+        </label>
+
+    </div>
+
+    <div class="check-note">
+        💡 This checklist is for self-reflection. It does not calculate
+        or store a score. Your selections may reset when you reload the page.
+    </div>
+
+</section>
+
+<!-- PRIVACY GUIDE -->
+<section class="tips-section">
+
+    <h2>Think Before You Share</h2>
+
+    <p class="tips-intro">
+        Your digital footprint can last longer than you expect.
+    </p>
+
+    <div class="privacy-box">
+
+        <div>
+            <h3 class="good">✓ Safer Choices</h3>
+            <ul>
+                <li>Use privacy settings thoughtfully.</li>
+                <li>Share information only when necessary.</li>
+                <li>Ask permission before posting someone else's photo.</li>
+                <li>Check facts before forwarding a message.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="bad">✕ Avoid These Habits</h3>
+            <ul>
+                <li>Posting passwords, OTPs or private documents.</li>
+                <li>Sharing your live location publicly without considering risks.</li>
+                <li>Clicking links in unexpected messages.</li>
+                <li>Forwarding unverified rumours or private content.</li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="tips-banner">
+
+    <p class="tagline">PUT YOUR KNOWLEDGE TO THE TEST</p>
+
+    <h2>How Cyber-Safe Are Your Decisions?</h2>
+
+    <p>
+        Explore common cyber threats and practise making safer
+        decisions in everyday online situations.
+    </p>
+
+    <a href="threats.html" class="btn secondary-btn">
+        Review Cyber Threats
+    </a>
+
+    <a href="quiz.html" class="btn primary-btn">
+        Take the Safety Quiz →
+    </a>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <a href="index.html" class="logo">🛡️ Cyber<span>Shield</span></a>
+
+    <p>Digital Wellness & Cyber Safety Awareness Project</p>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="threats.html">Cyber Threats</a>
+        <a href="tips.html">Safety Tips</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <p class="copyright">
+        Class 10 Computer Applications Project | Learn • Protect • Empower
+    </p>
+
+</footer>
+</body> </html> </CodeBlock>

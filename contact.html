@@ -1,0 +1,348 @@
+<CodeBlock language="html" editable> <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Contact Us | CyberShield</title> <link rel="stylesheet" href="style.css">
+<style>
+    .contact-hero {
+        text-align: center;
+        padding: 65px 20px 35px;
+    }
+
+    .contact-hero h1 {
+        font-size: 42px;
+        margin-bottom: 15px;
+    }
+
+    .contact-hero h1 span {
+        color: #38bdf8;
+    }
+
+    .contact-hero p {
+        max-width: 650px;
+        margin: auto;
+        line-height: 1.8;
+        color: #cbd5e1;
+    }
+
+    .contact-container {
+        max-width: 1100px;
+        margin: 20px auto 70px;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 30px;
+    }
+
+    .contact-info,
+    .contact-form {
+        background: #111c35;
+        border: 1px solid #263957;
+        border-radius: 18px;
+        padding: 30px;
+    }
+
+    .contact-info h2,
+    .contact-form h2 {
+        color: #38bdf8;
+        margin-bottom: 20px;
+    }
+
+    .contact-info > p {
+        color: #cbd5e1;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    .info-card {
+        background: #172541;
+        border-radius: 12px;
+        padding: 18px;
+        margin-bottom: 16px;
+        transition: 0.3s;
+    }
+
+    .info-card:hover {
+        transform: translateY(-4px);
+        border: 1px solid #38bdf8;
+    }
+
+    .info-card h3 {
+        margin-bottom: 8px;
+        color: #ffffff;
+    }
+
+    .info-card p,
+    .info-card a {
+        color: #cbd5e1;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+
+    .info-card a {
+        color: #38bdf8;
+        text-decoration: none;
+    }
+
+    .info-card a:hover {
+        text-decoration: underline;
+    }
+
+    .contact-form label {
+        display: block;
+        margin: 16px 0 8px;
+        color: #e2e8f0;
+        font-weight: 600;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        width: 100%;
+        padding: 13px;
+        border: 1px solid #344765;
+        border-radius: 9px;
+        background: #0b1428;
+        color: #ffffff;
+        font-family: inherit;
+        font-size: 15px;
+        box-sizing: border-box;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+        outline: 2px solid #38bdf8;
+        border-color: #38bdf8;
+    }
+
+    .contact-form textarea {
+        min-height: 130px;
+        resize: vertical;
+    }
+
+    .consent {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin: 20px 0;
+        color: #cbd5e1;
+        line-height: 1.6;
+        font-size: 14px;
+    }
+
+    .consent input {
+        width: auto;
+        margin-top: 5px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 9px;
+        background: #0284c7;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+        background: #0369a1;
+        transform: translateY(-2px);
+    }
+
+    .privacy-note {
+        margin-top: 18px;
+        color: #94a3b8;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .contact-quote {
+        text-align: center;
+        margin: 0 20px 60px;
+        padding: 30px 20px;
+        background: #111c35;
+        border-radius: 15px;
+        border: 1px solid #263957;
+    }
+
+    .contact-quote h2 {
+        color: #38bdf8;
+        margin-bottom: 12px;
+    }
+
+    .contact-quote p {
+        color: #cbd5e1;
+        line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+        .contact-container {
+            grid-template-columns: 1fr;
+            padding: 15px;
+        }
+
+        .contact-hero h1 {
+            font-size: 32px;
+        }
+
+        .contact-info,
+        .contact-form {
+            padding: 22px;
+        }
+    }
+</style>
+</head> <body>
+<!-- Navigation Bar -->
+<header>
+    <nav class="navbar">
+        <div class="logo">🛡️ CyberShield</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="threats.html">Cyber Threats</a></li>
+            <li><a href="tips.html">Safety Tips</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="wellness.html">Digital Wellness</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Page Introduction -->
+<section class="contact-hero">
+    <h1>Contact <span>Us</span></h1>
+    <p>
+        Have a question about digital wellness or cyber safety?
+        Get in touch with us. We believe that awareness and
+        communication are important steps towards a safer digital world.
+    </p>
+</section>
+
+<!-- Contact Details and Form -->
+<main class="contact-container">
+
+    <!-- Contact Information -->
+    <section class="contact-info">
+        <h2>Get In Touch</h2>
+
+        <p>
+            Connect with CyberShield to learn more about online safety,
+            responsible internet use and digital awareness.
+        </p>
+
+        <div class="info-card">
+            <h3>📧 Email Address</h3>
+            <p>
+                <a href="mailto:anuragyadav52018@gmail.com">
+                    anuragyadav52018@gmail.com
+                </a>
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>📱 Phone Number</h3>
+            <p>
+                <a href="tel:9984389732">9984389732</a>
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>🛡️ Our Mission</h3>
+            <p>
+                To promote cyber awareness, online privacy,
+                responsible technology use and digital well-being.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>🌐 Project Topic</h3>
+            <p>Digital Wellness &amp; Cyber Safety</p>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form">
+        <h2>Send Us a Message</h2>
+
+        <form action="#" method="post">
+
+            <label for="name">Full Name</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email address"
+                required
+            >
+
+            <label for="topic">Select Topic</label>
+            <select id="topic" name="topic" required>
+                <option value="">-- Choose a topic --</option>
+                <option value="cyber-safety">Cyber Safety</option>
+                <option value="online-privacy">Online Privacy</option>
+                <option value="digital-wellness">Digital Wellness</option>
+                <option value="cyberbullying">Cyberbullying</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="message">Your Message</label>
+            <textarea
+                id="message"
+                name="message"
+                placeholder="Write your message here..."
+                required
+            ></textarea>
+
+            <div class="consent">
+                <input
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    required
+                >
+                <label for="consent" style="margin: 0; font-weight: normal;">
+                    I agree to provide this information for this
+                    contact form demonstration.
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Submit Message →
+            </button>
+
+            <p class="privacy-note">
+                Privacy reminder: Never share your passwords,
+                OTPs or other confidential information through a
+                contact form.
+            </p>
+
+        </form>
+    </section>
+
+</main>
+
+<!-- Cyber Safety Reminder -->
+<section class="contact-quote">
+    <h2>Think Before You Share!</h2>
+    <p>
+        Your personal information is valuable. Stay alert,
+        protect your privacy and use the internet responsibly.
+    </p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 CyberShield | Digital Wellness &amp; Cyber Safety</p>
+    <p>Stay Safe. Think Smart. Be Cyber Aware.</p>
+</footer>
+</body> </html> </CodeBlock>

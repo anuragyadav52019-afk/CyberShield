@@ -1,0 +1,463 @@
+<CodeBlock language="html" editable> <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Cyber Safety Quiz | CyberShield</title> <link rel="stylesheet" href="style.css">
+<style>
+    .quiz-hero {
+        text-align: center;
+        padding: 65px 20px 35px;
+    }
+
+    .quiz-hero h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        margin-bottom: 15px;
+    }
+
+    .quiz-hero h1 span {
+        color: #38bdf8;
+    }
+
+    .quiz-hero p {
+        color: #b7c7dc;
+        max-width: 650px;
+        margin: auto;
+        line-height: 1.8;
+    }
+
+    .quiz-container {
+        max-width: 900px;
+        margin: 20px auto 70px;
+        padding: 0 20px;
+    }
+
+    .quiz-info {
+        background: linear-gradient(135deg, #102b50, #123d67);
+        border: 1px solid #2563a6;
+        border-radius: 16px;
+        padding: 22px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .quiz-info h2 {
+        margin-bottom: 8px;
+        color: #7dd3fc;
+    }
+
+    .quiz-info p {
+        color: #d5e4f5;
+        line-height: 1.7;
+    }
+
+    .question-card {
+        background: #0c1b30;
+        border: 1px solid #203b5d;
+        border-radius: 16px;
+        padding: 25px;
+        margin-bottom: 22px;
+        transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .question-card:hover {
+        transform: translateY(-3px);
+        border-color: #38bdf8;
+    }
+
+    .question-number {
+        display: inline-block;
+        background: #123d67;
+        color: #7dd3fc;
+        border-radius: 20px;
+        padding: 6px 13px;
+        font-size: 0.85rem;
+        margin-bottom: 14px;
+    }
+
+    .question-card h3 {
+        color: #f0f7ff;
+        line-height: 1.6;
+        margin-bottom: 18px;
+    }
+
+    .option {
+        display: block;
+        background: #11243b;
+        border: 1px solid #284461;
+        border-radius: 9px;
+        padding: 13px 15px;
+        margin: 10px 0;
+        color: #d7e6f7;
+        cursor: pointer;
+        transition: background 0.2s, border-color 0.2s;
+    }
+
+    .option:hover {
+        background: #183653;
+        border-color: #38bdf8;
+    }
+
+    .option input {
+        accent-color: #38bdf8;
+        margin-right: 10px;
+    }
+
+    .answer-box {
+        margin-top: 18px;
+        border-top: 1px solid #284461;
+        padding-top: 14px;
+    }
+
+    .answer-box summary {
+        color: #7dd3fc;
+        cursor: pointer;
+        font-weight: bold;
+        padding: 8px 0;
+    }
+
+    .answer-box p {
+        color: #c8d8eb;
+        line-height: 1.8;
+        margin-top: 10px;
+    }
+
+    .quiz-note {
+        background: #102b50;
+        border-left: 4px solid #38bdf8;
+        padding: 18px;
+        border-radius: 8px;
+        color: #d5e4f5;
+        line-height: 1.8;
+        margin-top: 30px;
+    }
+
+    .quiz-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
+    .quiz-buttons a {
+        display: inline-block;
+        text-decoration: none;
+        background: #0284c7;
+        color: white;
+        padding: 13px 22px;
+        border-radius: 9px;
+        font-weight: bold;
+        transition: background 0.2s;
+    }
+
+    .quiz-buttons a:hover {
+        background: #0369a1;
+    }
+
+    @media (max-width: 600px) {
+        .question-card {
+            padding: 18px;
+        }
+
+        .quiz-hero {
+            padding-top: 45px;
+        }
+    }
+</style>
+</head> <body>
+<nav class="navbar">
+    <div class="logo">🛡️ CyberShield</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="threats.html">Cyber Threats</a></li>
+        <li><a href="tips.html">Safety Tips</a></li>
+        <li><a href="quiz.html" class="active">Quiz</a></li>
+        <li><a href="wellness.html">Digital Wellness</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<header class="quiz-hero">
+    <h1>Cyber Safety <span>Quiz</span></h1>
+    <p>
+        Test your knowledge of cyber safety, online privacy,
+        strong passwords and responsible internet use.
+        Think carefully before revealing each answer!
+    </p>
+</header>
+
+<main class="quiz-container">
+
+    <section class="quiz-info">
+        <h2>🧠 Challenge Your Knowledge</h2>
+        <p>
+            8 questions • Multiple-choice format<br>
+            Select your answer, then open "Reveal Answer"
+            to check your understanding.
+        </p>
+    </section>
+
+    <!-- QUESTION 1 -->
+    <section class="question-card">
+        <span class="question-number">Question 01</span>
+        <h3>What is phishing?</h3>
+
+        <label class="option">
+            <input type="radio" name="q1">
+            A. A method of improving internet speed
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q1">
+            B. A fraudulent attempt to steal sensitive information
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q1">
+            C. A way to create stronger passwords
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q1">
+            D. A tool for editing photographs
+        </label>
+
+        <details class="answer-box">
+            <summary>🔎 Reveal Answer</summary>
+            <p><strong>Correct answer: B.</strong> Phishing uses deceptive messages or websites to trick people into sharing sensitive information.</p>
+        </details>
+    </section>
+
+    <!-- QUESTION 2 -->
+    <section class="question-card">
+        <span class="question-number">Question 02</span>
+        <h3>Which is the strongest password practice?</h3>
+
+        <label class="option">
+            <input type="radio" name="q2">
+            A. Using your name and birth year
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q2">
+            B. Using the same password everywhere
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q2">
+            C. Using a long, unique password for each account
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q2">
+            D. Sharing your password with friends
+        </label>
+
+        <details class="answer-box">
+            <summary>🔎 Reveal Answer</summary>
+            <p><strong>Correct answer: C.</strong> Long, unique passwords make accounts harder to compromise and prevent one exposed password from affecting multiple accounts.</p>
+        </details>
+    </section>
+
+    <!-- QUESTION 3 -->
+    <section class="question-card">
+        <span class="question-number">Question 03</span>
+        <h3>What should you do if you receive a suspicious link?</h3>
+
+        <label class="option">
+            <input type="radio" name="q3">
+            A. Open it immediately
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q3">
+            B. Forward it to everyone
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q3">
+            C. Enter your details to check whether it works
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q3">
+            D. Avoid opening it and verify the sender independently
+        </label>
+
+        <details class="answer-box">
+            <summary>🔎 Reveal Answer</summary>
+            <p><strong>Correct answer: D.</strong> Unexpected links can lead to fraudulent websites or harmful downloads. Verify the message through a trusted channel.</p>
+        </details>
+    </section>
+
+    <!-- QUESTION 4 -->
+    <section class="question-card">
+        <span class="question-number">Question 04</span>
+        <h3>What does two-factor authentication (2FA) provide?</h3>
+
+        <label class="option">
+            <input type="radio" name="q4">
+            A. An additional layer of account security
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q4">
+            B. Unlimited internet data
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q4">
+            C. Automatic removal of all viruses
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q4">
+            D. A replacement for every software update
+        </label>
+
+        <details class="answer-box">
+            <summary>🔎 Reveal Answer</summary>
+            <p><strong>Correct answer: A.</strong> 2FA requires an additional verification step beyond the password, helping protect an account if its password is exposed.</p>
+        </details>
+    </section>
+
+    <!-- QUESTION 5 -->
+    <section class="question-card">
+        <span class="question-number">Question 05</span>
+        <h3>What is cyberbullying?</h3>
+
+        <label class="option">
+            <input type="radio" name="q5">
+            A. Learning a new computer skill
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q5">
+            B. Repeatedly using digital platforms to harass or hurt someone
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q5">
+            C. Updating an application
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q5">
+            D. Creating a private folder
+        </label>
+
+        <details class="answer-box">
+            <summary>🔎 Reveal Answer</summary>
+            <p><strong>Correct answer: B.</strong> Cyberbullying involves using digital communication to target, intimidate or humiliate another person. Save relevant evidence and report it to a trusted adult or platform.</p>
+        </details>
+    </section>
+
+    <!-- QUESTION 6 -->
+    <section class="question-card">
+        <span class="question-number">Question 06</span>
+        <h3>Why should you install security updates?</h3>
+
+        <label class="option">
+            <input type="radio" name="q6">
+            A. They guarantee that no attack can ever happen
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q6">
+            B. They make every password unnecessary
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q6">
+            C. They can fix security weaknesses in software
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q6">
+            D. They automatically remove all unwanted messages
+        </label>
+
+        <details class="answer-box">
+            <summary>🔎 Reveal Answer</summary>
+            <p><strong>Correct answer: C.</strong> Updates often patch known vulnerabilities and improve the security and reliability of devices and applications.</p>
+        </details>
+    </section>
+
+    <!-- QUESTION 7 -->
+    <section class="question-card">
+        <span class="question-number">Question 07</span>
+        <h3>Which information should you avoid sharing publicly online?</h3>
+
+        <label class="option">
+            <input type="radio" name="q7">
+            A. A general interest in music
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q7">
+            B. A review of a book
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q7">
+            C. A general opinion about a movie
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q7">
+            D. Your password and one-time verification codes
+        </label>
+
+        <details class="answer-box">
+            <summary>🔎 Reveal Answer</summary>
+            <p><strong>Correct answer: D.</strong> Passwords and one-time verification codes can allow others to access your accounts. Never disclose them to someone who requests them unexpectedly.</p>
+        </details>
+    </section>
+
+    <!-- QUESTION 8 -->
+    <section class="question-card">
+        <span class="question-number">Question 08</span>
+        <h3>What is a healthy digital wellness habit?</h3>
+
+        <label class="option">
+            <input type="radio" name="q8">
+            A. Taking regular breaks from screens
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q8">
+            B. Staying online throughout the night
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q8">
+            C. Ignoring sleep to finish scrolling
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q8">
+            D. Checking notifications during every activity
+        </label>
+
+        <details class="answer-box">
+            <summary>🔎 Reveal Answer</summary>
+            <p><strong>Correct answer: A.</strong> Regular screen breaks, adequate sleep and time away from devices can support a healthier balance between online and offline life.</p>
+        </details>
+    </section>
+
+    <div class="quiz-note">
+        <strong>💡 Remember:</strong> This is a self-checking quiz.
+        The radio buttons let you select an option, and each
+        "Reveal Answer" section lets you check it. Since this
+        project uses HTML and CSS only, it does not calculate
+        your score automatically.
+    </div>
+
+    <div class="quiz-buttons">
+        <a href="tips.html">← Review Safety Tips</a>
+        <a href="wellness.html">Explore Digital Wellness →</a>
+    </div>
+
+</main>
+
+<footer class="footer">
+    <p>© 2026 CyberShield | Digital Wellness &amp; Cyber Safety</p>
+    <p>Stay Safe. Think Smart. Be Cyber Aware.</p>
+</footer>
+</body> </html> </CodeBlock>
